@@ -1,7 +1,6 @@
 import React from "react";
 import logo from '../../delete.png';
 import { useContext } from "react";
-import ContextValue from "../contextElement";
 
 const DeleteTaskButton = (props) =>
 {
@@ -14,7 +13,7 @@ const DeleteTaskButton = (props) =>
         setTimeout(() => {
         deleteTask(keyID)
         console.log(keyID)
-        }, 280);
+        }, 1000);
        }}> 
        <img className='png_del' src={logo} alt="Удалить" /></button>
     )

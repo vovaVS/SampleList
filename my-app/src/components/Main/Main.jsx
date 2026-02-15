@@ -13,11 +13,11 @@ const Main = () =>
         setTask((res)=> [...res, {id: res.length + 1, content: text, date: date.toLocaleString()}])
     }, [])
 
-    const deleteTask = ((taskID)=>
+    const deleteTask = useCallback((taskID)=>
     {
         const update = task.filter((ID) => ID.id !== taskID)
         setTask(update)
-    })
+    }, [task])
 
     const functionValue = {createTask, deleteTask}
     
