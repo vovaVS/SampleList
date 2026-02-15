@@ -1,0 +1,224 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+
+  background: #D5E4D3;
+  background: linear-gradient(315deg, #D5E4D3, #B9D0DD);
+  min-height: 100vh;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header
+{
+ background-color: #4b4e54;
+}
+
+.container
+{
+ width: 100%;
+ max-width: 1600px;
+ margin: 0 auto;
+}
+
+.title__header
+{
+  font-size: 2.5rem;
+  color: azure;
+  font-weight: 500;
+}
+
+.user_button
+{
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.user_conferences
+{
+  display: flex;
+  gap: 30px;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.header__wrapper
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_input_section
+{
+  display: flex;
+  margin-top: 30px;
+}
+.input_user_wrap
+{
+  width: 64%;
+  height: 45px;
+  border-radius: 30px;
+  border: none;
+  -webkit-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  -moz-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  position: relative;
+  padding-left: 15px;
+  outline: none;
+}
+
+.submit_buttonInput
+{
+  width: 80px;
+  height: 49px;
+  background-color: #5a6777;
+  font-size: 1rem;
+  color: #fff;
+  -webkit-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  -moz-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  border-radius: 30px;
+  border: none;
+  position: absolute;
+  left: 58%;
+  outline: none;
+}
+
+.main_wrapper
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.input_section__wrapper
+{
+  display: block;
+  width: 64%;
+  position: relative;
+}
+
+.card
+{
+  width: 100%;
+  max-width: 300px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  -webkit-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  -moz-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  border-radius: 20px;
+}
+
+.card__wrapper
+{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.title-card
+{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  height: 80px;
+  background-color: #e9a49d;
+  color: #fff;
+  font-size: 1.2rem;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.taskList__wrapper
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contentTask
+{
+  margin-top: 50px;
+}
+.content_card {
+  min-height: 120px;
+  display: inline-block;
+  align-items: center;
+  word-wrap: break-word;
+  padding: 0 15px;
+}
+.button_delete_task
+{
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  justify-content: space-between;
+
+}
+
+.checkbox_card
+{
+  width: 20px;
+  height: 20px;
+}
+
+.delete_task
+{
+  width: 50px;
+  height: 30px;
+  border: none;
+  color: red;
+}
+
+.test
+{
+  color: #5a6777;
+}
+
+.Notest
+{
+  color: #0f51a1;
+}
+
+.png_del
+{
+  width: 60%;
+  pointer-events: none;
+}
+/* Анимация появления */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Анимация исчезновения */
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
+
