@@ -1,4 +1,4 @@
-import { useContext, useRef, useState, React, createRef} from 'react';
+import { useContext, useRef, createRef} from 'react';
 import CardTask from './CardTask';
 import ContextValue from '../contextElement';
 import { memo } from 'react';
@@ -8,10 +8,8 @@ const ContentTask = (props) => {
   const { task } = props;
   const { deleteTask } = useContext(ContextValue);
 
-  // Создаем массив рефов для каждого элемента задачи
   const nodeRefs = useRef([]);
 
-  // Обеспечиваем, чтобы рефы соответствовали длине task
   if (nodeRefs.current.length !== task.length) {
     nodeRefs.current = Array(task.length)
       .fill()
