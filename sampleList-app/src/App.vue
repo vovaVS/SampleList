@@ -1,9 +1,9 @@
 <script setup>
-import HeaderVue from "./components/Header/Header.vue";
-import Main from "./components/Main/MainView.vue";
+
+import { router } from './routers/taskRouters';
+
 </script>
 
 <template>
-  <HeaderVue />
-  <Main />
+ <router-view></router-view>
 </template>

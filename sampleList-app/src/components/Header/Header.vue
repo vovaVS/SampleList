@@ -1,8 +1,17 @@
 <script setup>
+import { router } from '@/routers/taskRouters';
 import TitleIcon from '../Main/icons/titleIcon.vue';
+import { jwtDecode } from "jwt-decode";
+import { userDataStore } from '@/stores/userDataStore';
 
+const user = userDataStore();
+
+const unLogin = () =>
+{
+  localStorage.removeItem('token');
+  router.push('/auth');
+}
 </script>
-
 <template>
   <header className=" container header">
     <div className="header__wrapper">
@@ -11,7 +20,8 @@ import TitleIcon from '../Main/icons/titleIcon.vue';
         <h1 className="title__header">TODOCLOUD</h1>
       </div>
       <div className="user_conferences">
-        <button className="user_button">Vova Chernov</button>
+        <button className="user_button">{{user.userData}}</button>
+        <button @click="unLogin">Выход</button>
       </div>
     </div>
   </header>

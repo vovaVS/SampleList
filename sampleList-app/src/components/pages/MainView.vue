@@ -1,8 +1,10 @@
 <script setup>
-import ContentTask from "./ContentTask.vue";
-import InputTask from "./InputTask.vue";
-import { onMounted, ref } from "vue";
+import ContentTask from "../Main/ContentTask.vue";
+import InputTask from "../Main//InputTask.vue";
+import HeaderView from "../Header/Header.vue";
+import { onMounted, ref, registerRuntimeCompiler } from "vue";
 import axios from "axios";
+
 const task = ref([]);
 onMounted(() => {
   axios.get("http://localhost:3000/").then((res) => {
@@ -24,6 +26,7 @@ const deleteTask = (ID) => {
 };
 </script>
 <template>
+  <HeaderView />
   <main class="main">
     <div class="container main_wrapper">
       <InputTask @createTask="createTask" />
