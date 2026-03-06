@@ -1,47 +1,38 @@
 <script setup>
-import { router } from '@/routers/taskRouters';
-import TitleIcon from '../Main/icons/titleIcon.vue';
-import { jwtDecode } from "jwt-decode";
+import TitleIcon from '../Main/icons/TitleIcon.vue';
 import { userDataStore } from '@/stores/userDataStore';
+import NotificationIcon from '../Main/icons/NotificationIcon.vue';
 
 const user = userDataStore();
 
-const unLogin = () =>
-{
-  localStorage.removeItem('token');
-  router.push('/auth');
-}
 </script>
 <template>
   <header className=" container header">
     <div className="header__wrapper">
       <div className="title__toDoList">
         <TitleIcon/>
-        <h1 className="title__header">TODOCLOUD</h1>
+        <h1 className="title__header">ClarityDesk</h1>
       </div>
       <div className="user_conferences">
-        <button className="user_button">{{user.userData}}</button>
-        <button @click="unLogin">Выход</button>
+        <NotificationIcon/>
+        <div className="user_login">{{user.userData.login}}</div>
       </div>
     </div>
   </header>
 </template>
 
 <style scoped>
-.header {
-  background-color: #4b4e54;
-}
 
 .title__header {
   font-size: 2rem;
-  color: azure;
+  color: rgb(77, 165, 224);
   font-weight: 500;
 }
 
-.user_button {
+.user_login {
   border: none;
   background: none;
-  color: #fff;
+  color: #000000;
   font-size: 1.3rem;
 }
 
@@ -50,19 +41,24 @@ const unLogin = () =>
   gap: 30px;
   color: #fff;
   font-size: 1.3rem;
+  padding-right: 30px;
+}
+
+.title__toDoList
+{
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
 }
 
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
-  padding-top: 20px;
 }
 
 .container {
   width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
 }
 

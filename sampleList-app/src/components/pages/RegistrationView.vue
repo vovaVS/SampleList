@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 import axios from "axios";
 import { router } from "@/routers/taskRouters";
 import { userDataStore } from "@/stores/userDataStore";
+import { ENTERED } from "react-transition-group/Transition";
+import EmailInputIcon from "../Main/icons/EmailInputIcon.vue";
 
 
 const loginText = ref("");
@@ -26,7 +28,7 @@ const regUser =  async () => {
     }
     else
     {
-      userData.SetUser(result.data.result.user.login);
+      userData.SetUser({login: result.data.result.user.login, id: result.data.result.user.ID});
       localStorage.setItem("token", result.data.result.accessToken);
       router.push("/");
     }
@@ -40,9 +42,10 @@ const regUser =  async () => {
 </script>
 
 <template>
+  <div class="rigister_class">
   <div class="register">
+     <h1>РЕГИСТРАЦИЯ</h1>
     <div class="register__wrapper">
-      <h1>TODOLIST</h1>
       <input
         class="register__input"
         value="loginText"
@@ -51,14 +54,14 @@ const regUser =  async () => {
         min="4"
         placeholder="Login"
       />
-       <div class="error_auntificationUser" v-if="msgLogin !== '' ">{{  msgLogin }}</div>
+       <div class="error_registerUser" v-if="msgLogin !== '' ">{{  msgLogin }}</div>
       <input
         class="register__input"
         v-model="emailText"
         type="email"
         placeholder="Email"
       />
-      <div class="error_auntificationUser" v-if="msgErrormail !== ''">{{  msgErrormail }}</div>
+      <div class="error_registerUser" v-if="msgErrormail !== ''">{{  msgErrormail }}</div>
       <input
         class="register__input"
         v-model="passwordText"
@@ -66,7 +69,7 @@ const regUser =  async () => {
         placeholder="Password"
         min="8"
       />
-      <div class="error_auntificationUser" v-if="msgPassword !== ''">{{ msgPassword }}</div>
+      <div class="error_registerUser" v-if="msgPassword !== ''">{{ msgPassword }}</div>
       <input
         class="register__input"
         v-model="passwordText"
@@ -74,36 +77,71 @@ const regUser =  async () => {
         placeholder="Repeat password"
         min="8"
       />
-      <div class="error_auntificationUser" v-if="msgPassword !== ''">{{ msgPassword }}</div>
+      <div class="error_registerUser" v-if="msgPassword !== ''">{{ msgPassword }}</div>
       <button @click="regUser" 
-      class="register__button">Register</button>
+      class="register__button">Отправить</button>
     </div>
     <router-link to="/auth">Авторизация</router-link>
+  </div>
   </div>
 </template>
 
 <style scoped>
+
 .register
 {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background-color: aliceblue;
+  max-width: 580px;
+  width: 100%;
+  min-height: 426px;
   align-items: center;
-  margin: 0;
-  height: 70vh;
+  flex-direction: column;
+  border-radius: 5%;
+  box-shadow: 0px 10px 15px 11px rgba(0,0,0,0.1);
+  padding-bottom: 30px;
+  
 }
 .register__wrapper {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  align-items: center;
 }
 .register__input {
-  width: 300px;
-  height: 30px;
+  width: 400px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
 }
 
 .register__button {
   width: 300px;
-  height: 30px;
+  height: 50px;
+  -webkit-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  -moz-box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  box-shadow: 3px 6px 24px 2px rgba(66, 68, 90, 0.36);
+  background-color: #5b9fd6;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: #ffff;
+  
+}
+
+.rigister_class
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 90vh;
+}
+
+.error_registerUser
+{
+  font-size: 1rem;
+  color: red;
 }
 </style>

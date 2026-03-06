@@ -1,7 +1,6 @@
 <script setup>
 
 import { router } from './routers/taskRouters';
-
 </script>
 
 <template>

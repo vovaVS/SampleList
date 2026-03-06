@@ -1,5 +1,5 @@
 <script setup>
-import DeleteTaskIcon from "./icons/deleteTaskIcon.vue";
+import DeleteTaskIcon from "./icons/DeleteTaskIcon.vue";
 const emit = defineEmits(['click'])
 </script>
 

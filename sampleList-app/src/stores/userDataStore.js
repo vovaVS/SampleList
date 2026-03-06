@@ -9,5 +9,10 @@ export const userDataStore = defineStore("userData", ()=> {
     userData.value = user;
   }
   return {userData, SetUser}
+},
 
-});
+{
+  persist: true
+}
+
+);
